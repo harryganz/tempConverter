@@ -4,8 +4,22 @@
 }
 
 form {
-  width: 150px;
+  width: 250px;
   margin: 0 auto;
+}
+
+.result {
+  width: 250px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.toTemp {
+  margin-left: 15px;
+  width: 75px;
+  height: 25px;
+  border-radius: 5px;
+  border: solid 1px #ddd;
 }
 
 .footer {

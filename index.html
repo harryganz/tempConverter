@@ -12,41 +12,42 @@
           <h1>Temperature Converter</h1>
         </div>
       </div>
-      <div class="main" ng-controller="tempController">
+      <div class="main" ng-controller="TempController as temp">
         <div class="container">
-          <form>
+          <form ng-submit="temp.convert()">
             <div class="form-group">
               <label for="fromTemp">Temperature</label>
-              <input class="form-control" type="textfield" name="temp"/>
+              <input class="form-control" type="textfield" name="temp"
+              ng-model="temp.temp"/>
             </div>
             <div class="form-group">
               <label>From</label> <br/>
               <label class="radio-inline">
                 <input type="radio" name="fromTempRadio" id="fromTempRadioKelvin"
-                value="kelvin"/> Kelvin
+                value="kelvin" ng-model="temp.fromUnits"/> Kelvin
               </label>
               <label class="radio-inline">
                 <input type="radio" name="fromTempRadio" id="fromTempRadioCelsius"
-                value="celsius"/> Celsius
+                value="celsius" ng-model="temp.fromUnits"/> Celsius
               </label>
               <label class="radio-inline">
                 <input type="radio" name="fromTempRadio" id="fromTempRadioFahrenheit"
-                value="fahrenheit"/> Fahrenheit
+                value="fahrenheit" ng-model="temp.fromUnits"/> Fahrenheit
               </label>
             </div>
             <div class="form-group">
               <label>To</label> <br/>
               <label class="radio-inline">
                 <input type="radio" name="toTempRadio" id="toTempRadioKelvin"
-                value="kelvin"/> Kelvin
+                value="kelvin" ng-model="temp.toUnits"/> Kelvin
               </label>
               <label class="radio-inline">
                 <input type="radio" name="toTempRadio" id="toTempRadioCelsius"
-                value="celsius"/> Celsius
+                value="celsius" ng-model="temp.toUnits"/> Celsius
               </label>
               <label class="radio-inline">
                 <input type="radio" name="toTempRadio" id="toTempRadioFahrenheit"
-                value="fahrenheit"/> Fahrenheit
+                value="fahrenheit" ng-model="temp.toUnits"/> Fahrenheit
               </label>
             </div>
             <button type="submit" class="btn btn-default">Convert</button>
@@ -54,7 +55,7 @@
           <div class="result">
             <h3>Result</h3>
             <div class="toTemp">
-              <p class="pull-right"></p>
+              <p class="pull-right">{{temp.result | number:2}}</p>
             </div>
           </div>
         </div>

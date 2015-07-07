@@ -34,7 +34,6 @@
             this.result = parseFloat(kelvin)*9/5 - 459.67;
             break;
           };
-        this.temp = '';
       } else {
         alert("please enter temperature and units");
       }
